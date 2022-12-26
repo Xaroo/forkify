@@ -1,6 +1,5 @@
 import View from './View';
 import icons from 'url:../../img/icons.svg';
-import { Fraction } from 'fractional';
 import { numberToFraction } from '../helpers';
 
 class RecipeView extends View {
