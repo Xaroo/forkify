@@ -4,7 +4,7 @@ import { numberToFraction } from '../helpers';
 
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
-  _errorMessage = `We coulnd't find that recipe (Invalid id). Please try another one.`;
+  _errorMessage = `We couldn't find that recipe (Invalid id). Please try another one.`;
   _message = '';
 
   addHandlerRender(handler) {
@@ -124,9 +124,7 @@ class RecipeView extends View {
       <svg class="recipe__icon">
         <use href="${icons}#icon-check"></use>
       </svg>
-      <div class="recipe__quantity">${
-        el.quantity ? numberToFraction(el.quantity).toString() : ''
-      }</div>
+      <div class="recipe__quantity">${el.quantity ? el.quantity : ''}</div>
       <div class="recipe__description">
         <span class="recipe__unit">${el.unit}</span>
         ${el.description}
