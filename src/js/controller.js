@@ -114,5 +114,6 @@ const init = function () {
   bookmarksView.render(model.state.bookmarks);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   newFeature();
+  console.log(model.state);
 };
 init();
