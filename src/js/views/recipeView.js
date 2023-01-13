@@ -1,10 +1,10 @@
 import View from './View';
 import icons from 'url:../../img/icons.svg';
-import 'fractional';
+import { numberToFraction } from '../helpers';
 
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
-  _errorMessage = `We couldn't find that recipe (Invalid id). Please try another one.`;
+  _errorMessage = `We coulnd't find that recipe (Invalid id). Please try another one.`;
   _message = '';
 
   addHandlerRender(handler) {
@@ -125,7 +125,7 @@ class RecipeView extends View {
         <use href="${icons}.svg#icon-check"></use>
       </svg>
       <div class="recipe__quantity">${
-        el.quantity ? new Fraction(el.quantity).toString() : ''
+        el.quantity ? numberToFraction(el.quantity).toString() : ''
       }</div>
       <div class="recipe__description">
         <span class="recipe__unit">${el.unit}</span>
