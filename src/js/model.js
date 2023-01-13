@@ -2,7 +2,9 @@ import { API_URL } from './config';
 import { async } from 'regenerator-runtime';
 import { AJAX } from './helpers';
 import { RES_PER_PAGE, KEY } from './config';
-
+if (module.hot) {
+  module.hot.accept();
+}
 export const state = {
   recipe: {},
   search: {
@@ -46,7 +48,6 @@ export const loadRecipe = async function (id) {
 export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
-
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
     state.search.results = data.data.recipes.map(rec => {
       return {

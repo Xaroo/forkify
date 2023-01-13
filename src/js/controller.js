@@ -7,7 +7,8 @@ import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
-import { MODAL_CLOSE_SEC } from './config.js';
+import { MODAL_CLOSE_SEC, KEY } from './config.js';
+import { AJAX } from './helpers.js';
 
 ('use strict');
 const recipeContainer = document.querySelector('.recipe');
